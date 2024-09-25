@@ -1,5 +1,5 @@
-import React from 'react'
-import CardComponent from '../CardComponent'
+import React from 'react';
+import CardComponent from '@/components/CardComponent';
 import { person } from "@/constants";
 import { useState } from 'react';
 
@@ -11,17 +11,20 @@ const ListPersonComponent = () => {
   };
   
   return (
-    <div className="d-flex flex-row justify-content-center gap-2 mb-3 mt-5">
-     {person.map((p) => (
-      <CardComponent 
-        onClick={handleClick} 
-        key={p.id} 
-        person={p}
-        isSelected={selectedCard === p.id} 
-      />
-    ))} 
-  </div>
-  )
+    <div className="container mt-5">
+      <div className="row">
+        {person.map((p) => (
+          <div key={p.id} className="d-flex justify-content-start col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <CardComponent 
+              onClick={handleClick} 
+              person={p}
+              isSelected={selectedCard === p.id} 
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default ListPersonComponent
+export default ListPersonComponent;

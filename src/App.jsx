@@ -1,4 +1,3 @@
-import "./App.css";
 import TemplateComponent from "@/layout/TemplateComponent";
 
 function App() {
